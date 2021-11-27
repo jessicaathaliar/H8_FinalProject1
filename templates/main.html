@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Regression Model</title>
+</head>
+<body>
+
+    <div class="form">
+        <h1>Uber and Lyft Cab Price Prediction</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <h3>Distance</h3>
+            <h5>- Fill in the distance value (ex : 2)</h5>
+            <input type="text" name="dst" placeholder="distance" required="required" />
+            <br>
+            <h3>Surge Multiplier</h3>
+            <h5>- Fill in the surge multiplier value between 1 to 3 (ex : 1)</h5>
+            <input type="text" name="sm" placeholder="surge_multiplier" required="required" />
+            <br>
+            <h3>Cab Name</h3>
+            <h5>- Put "1" for the cab name that you want to predict, and put "0" for the rest of the cab name</h5>
+            <input type="text" name="bb" placeholder="Black" required="required" />
+            <input type="text" name="bs" placeholder="Black SUV" required="required" />
+            <input type="text" name="lux" placeholder="Lux" required="required" />
+            <input type="text" name="lb" placeholder="Lux Black" required="required" />
+            <input type="text" name="lbxl" placeholder="Lux Black XL" required="required" />
+            <input type="text" name="lyft" placeholder="Lyft" required="required" />
+            <input type="text" name="lxl" placeholder="Lyft XL" required="required" />
+            <input type="text" name="shr" placeholder="Shared" required="required" />
+            <input type="text" name="tx" placeholder="Taxi" required="required" />
+            <input type="text" name="up" placeholder="Uber Pool" required="required" />
+            <input type="text" name="ux" placeholder="Uber X" required="required" />
+            <input type="text" name="uxl" placeholder="Uber XL" required="required" />
+            <input type="text" name="wav" placeholder="WAV" required="required" />
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        </form>
+
+        <p class="message">{{ prediction_text }}</p>
+    </div>
+
+</body>
+</html>
